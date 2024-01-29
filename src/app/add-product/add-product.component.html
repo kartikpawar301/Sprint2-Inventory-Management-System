@@ -1,0 +1,64 @@
+<mat-toolbar style="background-color: #504c4c; color: white;">
+    <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>inventory</mat-icon>
+    </a>
+    <span>Welcome To Inventory Management System</span>
+    <span class="example-spacer"></span>
+    <a href=".././products"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>arrow_back</mat-icon>
+    </a>
+    <a href=".././login/"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>logout</mat-icon>
+    </a>
+</mat-toolbar>
+
+
+
+<div class="row" style="margin-top: 20px;">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+        <div class="row">
+            <h3 class="text-center" style="margin-top: 20px;"> Create Product </h3>
+            <hr />
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="productName" [(ngModel)]="product.productName"
+                            name="productName">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" id="productDescription" [(ngModel)]="product.productDescription"
+                            name="productDescription">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <input type="text" class="form-control" id="productCategory" [(ngModel)]="product.productCategory"
+                            name="productCategory">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="number" class="form-control" id="productQuantity" [(ngModel)]="product.productQuantity"
+                            name="productQuantity">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="number" class="form-control" id="productPrice" [(ngModel)]="product.productPrice"
+                            name="productPrice">
+                    </div>
+
+                    <br>
+                    <button class="btn btn-success" type="submit">Add Product</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<mat-toolbar style="background-color: #504c4c; color: white;">
+    <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>inventory</mat-icon>
+    </a>
+    <span>Welcome To Inventory Management System</span>
+    <span class="example-spacer"></span>
+    <a href=".././dashboard/"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>dashboard</mat-icon>
+    </a>
+    <a href="../add-defective-items/"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>person_add</mat-icon>
+    </a>
+    <a href=".././login/"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>logout</mat-icon>
+    </a>
+</mat-toolbar>
+
+
+<div class = "row text-center" style="margin-top: 20px;">
+    <h1> DefectiveItems List</h1>
+</div>
+
+<table class = "table table-bordered table-light table-hover">
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Product Id </th>
+            <th> Supplier Id</th>
+            <th> Defective Quantity</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let defectiveItems of defectiveItemss" >
+            <td> {{ defectiveItems.defectiveItemsId}} </td>
+            <td> {{ defectiveItems.product }} </td>
+            <td> {{ defectiveItems.supplier }} </td>
+            <td> {{ defectiveItems.defectiveQuantity }} </td>
+            <td>
+                <button (click) = "updateDefectiveItems(defectiveItems.defectiveItemsId)" class = "btn btn-primary"> Update</button>
+                <button (click) = "deleteDefectiveItems(defectiveItems.defectiveItemsId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "defectiveItemsDetails(defectiveItems.defectiveItemsId)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,56 @@
+<mat-toolbar style="background-color: #504c4c; color: white;">
+    <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>inventory</mat-icon>
+    </a>
+    <span>Welcome To Inventory Management System</span>
+    <span class="example-spacer"></span>
+    <a href=".././dashboard/"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>dashboard</mat-icon>
+    </a>
+    <a href="../add-sales/"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>person_add</mat-icon>
+    </a>
+    <a href=".././login/"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>logout</mat-icon>
+    </a>
+</mat-toolbar>
+
+
+<div class = "row text-center" style="margin-top: 20px;" >
+    <h1> Sales List</h1>
+</div>
+
+
+<table class = "table table-bordered table-light table-hover">
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> CustomerId </th>
+            <th> ProductId </th>
+            <th> Purchase Date </th>
+            <th> Total Amount </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let sales of saless" >
+            <td> {{ sales.saleId }} </td>
+            <td> {{ sales.customer }} </td>
+            <td> {{ sales.product }} </td>
+            <td> {{ sales.purchaseDate }} </td>
+            <td> {{ sales.totalAmount }} </td>
+            <td>
+                <button (click) = "salesDetails(sales.saleId)" class = "btn btn-primary" style="margin-left: 10px">View</button>
+                <button (click) = "deleteSales(sales.saleId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!--
+<option *ngFor="let customer of customers" [value]="customer.customerId">
+    {{ customer.name }}
+</option>
+-->

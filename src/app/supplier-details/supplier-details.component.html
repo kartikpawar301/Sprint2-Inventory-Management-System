@@ -1,0 +1,38 @@
+<mat-toolbar style="background-color: #504c4c; color: white;">
+  <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <mat-icon>inventory</mat-icon>
+  </a>
+  <span>Welcome To Inventory Management System</span>
+  <span class="example-spacer"></span>
+  <a href=".././login/"
+  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <mat-icon>logout</mat-icon>
+  </a>
+</mat-toolbar>
+
+
+<table class = "table table-bordered" style="margin-top: 20px;">
+  <thead>
+    <tr *ngIf="supplier">
+      <th> Id </th>
+      <td> {{ supplier.supplierId}} </td>
+    </tr>
+    <tr *ngIf="supplier">
+      <th> Full Name </th>
+      <td> {{ supplier.supplierName }} </td>
+    </tr>
+    <tr *ngIf="supplier">
+      <th> Address </th>
+      <td> {{ supplier.supplierAddress }} </td>
+    </tr>
+    <tr *ngIf="supplier">
+      <th> Mobile Number </th>
+      <td> {{ supplier.supplierMobileNumber }} </td>
+    </tr>
+  </thead>
+</table>
+
+
+<div class="text-center">
+  <button (click)="list()" class="btn btn-primary text-center">Back to Supplier List</button>
+</div>

@@ -1,0 +1,38 @@
+<mat-toolbar style="background-color: #504c4c; color: white;">
+  <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <mat-icon>inventory</mat-icon>
+  </a>
+  <span>Welcome To Inventory Management System</span>
+  <span class="example-spacer"></span>
+  <a href=".././login/"
+  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <mat-icon>logout</mat-icon>
+  </a>
+</mat-toolbar>
+
+
+<table class = "table table-bordered" style="margin-top: 20px;">
+  <thead>
+    
+      <tr *ngIf="customer">
+        <th> Id </th>
+        <td> {{ customer.customerId}} </td>
+      </tr>
+      <tr *ngIf="customer">
+        <th> Full Name </th>
+        <td> {{ customer.customerName }} </td>
+      </tr>
+      <tr *ngIf="customer">
+        <th> Address </th>
+        <td> {{ customer.customerAddress }} </td>
+      </tr>
+      <tr *ngIf="customer">
+        <th> Mobile Number </th>
+        <td> {{ customer.customerMobileNumber }} </td>
+      </tr>
+  </thead>
+</table>
+
+<div class="text-center">
+  <button (click)="list()" class="btn btn-primary">Back to Customer List</button>
+</div>

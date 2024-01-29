@@ -1,0 +1,46 @@
+<mat-toolbar style="background-color: #504c4c; color: white;">
+  <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <mat-icon>inventory</mat-icon>
+  </a>
+  <span>Welcome To Inventory Management System</span>
+  <span class="example-spacer"></span>
+  <a href=".././login/"
+  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <mat-icon>logout</mat-icon>
+  </a>
+</mat-toolbar>
+
+
+<table class = "table table-bordered" style="margin-top: 20px;">
+  <thead>
+      <tr *ngIf="product">
+        <th> Id </th>
+        <td> {{ product.productId}} </td>
+      </tr>
+      <tr *ngIf="product">
+        <th> Full Name </th>
+        <td> {{ product.productName }} </td>
+      </tr>
+      <tr *ngIf="product">
+        <th> Description </th>
+        <td> {{ product.productDescription }} </td>
+      </tr>
+      <tr *ngIf="product">
+        <th> Category </th>
+        <td> {{ product.productCategory }} </td>
+      </tr>
+      <tr *ngIf="product">
+        <th> Quantity </th>
+        <td> {{ product.productQuantity }} </td>
+      </tr>
+      <tr *ngIf="product">
+        <th> Price </th>
+        <td> {{ product.productPrice }} </td>
+      </tr>
+  </thead>
+</table>
+
+
+<div class="text-center">
+  <button (click)="list()" class="btn btn-primary">Back to Product List</button>
+</div>

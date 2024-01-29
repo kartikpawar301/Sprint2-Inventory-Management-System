@@ -1,0 +1,49 @@
+<mat-toolbar style="background-color: #504c4c; color: white;">
+    <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>inventory</mat-icon>
+    </a>
+    <span>Welcome To Inventory Management System</span>
+    <span class="example-spacer"></span>
+    <a href=".././dashboard/"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>dashboard</mat-icon>
+    </a>
+    <a href="../add-supplier/"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>person_add</mat-icon>
+    </a>
+    <a href=".././login/"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>logout</mat-icon>
+    </a>
+</mat-toolbar>
+
+<div class = "row text-center" style="margin-top: 20px;">
+    <h1>Supplier List</h1>
+</div>
+
+
+<table class = "table table-bordered table-light table-hover">
+    <thead>
+        <tr >
+            <th> Id </th>
+            <th> Full Name </th>
+            <th> Address </th>
+            <th> Mobile Number </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let supplier of suppliers" >
+            <td> {{ supplier.supplierId}} </td>
+            <td> {{ supplier.supplierName }} </td>
+            <td> {{ supplier.supplierAddress }} </td>
+            <td> {{ supplier.supplierMobileNumber }} </td>
+            <td>
+                <button (click) = "updateSupplier(supplier.supplierId)" class = "btn btn-primary"> Update</button>
+                <button (click) = "deleteSupplier(supplier.supplierId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "supplierDetails(supplier.supplierId)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
